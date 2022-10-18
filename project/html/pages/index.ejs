@@ -7,9 +7,16 @@
     <!-- the classes 'page-header' and 'btn btn-dark' create bootstrap components.  -->
     <!-- Check out more components here: http://getbootstrap.com/components/ -->
     <div class="page-header">
-      <h1>Hello World Again and again!</h1>
+      <%- include('../helpers/navbar.ejs') %>
+      <h1>API web app</h1>
     </div>
-
+    <div class="weather">
+      <p>City is :</p>
+      <div class="city"></div>
+      <p>Temperature is :</p>
+      <div class="temp"></div>
+      <p>°C</p>
+    </div>
     <p>Click on the button for a surprise.</p>
 
     <button onClick="showPicture()" class="btn btn-dark">Click me</button>
