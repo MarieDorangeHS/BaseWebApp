@@ -2,9 +2,11 @@ $(document).ready(function () {
   getWeather();
 });
 
-function getWeather() {
+function getWeather(searchQuery) {
   var url =
-    "https://api.openweathermap.org/data/2.5/weather?q=Boston&units=metric&appid=" +
+    "https://api.openweathermap.org/data/2.5/weather?q=" +
+    searchQuery +
+    "&units=metric&appid=" +
     apiKey;
   $.ajax(url, {
     success: function (data) {
@@ -25,4 +27,9 @@ function showPicture() {
   );
 
   // jQuery can do a lot of crazy stuff, so make sure to Google around to find out more
+}
+
+function searchWeather() {
+  var searchQuery = $(".search").val();
+  getWeather(searchQuery);
 }
