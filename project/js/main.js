@@ -14,7 +14,7 @@ function getWeather(searchQuery) {
       $(".temp").text(data.main.temp);
     },
     error: function (error) {
-      $(".error-message").text("An error occured");
+      $(".errormessage").text("An error occured");
     },
   });
 }
