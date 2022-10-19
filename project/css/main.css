@@ -35,6 +35,9 @@ button {
 .city-name p,
 .city-temp p {
   display: inline;
+}
+
+.weather {
   padding: 10px;
   margin 5px;
   background_color: #555#;
