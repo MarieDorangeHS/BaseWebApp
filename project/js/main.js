@@ -20,7 +20,7 @@ function showPicture() {
   $("#image").append(
     '<img class="rounded-circle" src="images/high-five.gif"/>'
   );
-  $("p").html(
+  $("p.reward").html(
     "High five! You're building your first web app using a simple API!"
   );
 
