@@ -8,6 +8,7 @@ function getWeather(searchQuery) {
     searchQuery +
     "&units=metric&appid=" +
     apiKey;
+
   $.ajax(url, {
     success: function (data) {
       $(".city").text(data.name);
