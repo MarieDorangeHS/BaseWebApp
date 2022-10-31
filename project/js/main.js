@@ -50,18 +50,15 @@ function handleSignIn() {
   firebase
     .auth()
     .signInWithPopup(provider)
-    .then((result) => {
-      /** @type {firebase.auth.OAuthCredential} */
-      var credential = result.credential;
-
+    .then(function (result) {
       // This gives you a Google Access Token. You can use it to access the Google API.
-      var token = credential.accessToken;
+      var token = result.credential.accessToken;
       // The signed-in user info.
       var user = result.user;
       console.log(user.email);
       // check if it is working!
     })
-    .catch((error) => {
+    .catch(function (error) {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
@@ -84,5 +81,5 @@ function handleMessageFormSubmit() {
   var postTitle = $("#post-title").val();
   var postBody = $("#post-body").val();
   console.log(postTitle);
-  addMessage(postTitle, postBody);
+  //addMessage(postTitle, postBody);
 }
