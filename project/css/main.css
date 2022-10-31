@@ -33,7 +33,8 @@ button {
 }
 
 .city-name p,
-.city-temp p {
+.city-temp p,
+.city-wind p {
   display: inline;
 }
 

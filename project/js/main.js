@@ -11,12 +11,14 @@ function getWeather(searchQuery) {
 
   $(".city").text("");
   $(".temp").text("");
+  $(".wind").text("");
   $(".error-message").text("");
 
   $.ajax(url, {
     success: function (data) {
       $(".city").text(data.name);
       $(".temp").text(data.main.temp);
+      $(".wind").text(data.wind.speed);
     },
     error: function (error) {
       $(".error-message").text("An error occured!");
