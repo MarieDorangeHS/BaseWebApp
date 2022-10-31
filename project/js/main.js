@@ -1,6 +1,6 @@
-$(document).ready(function () {
-  getWeather();
-});
+// $(document).ready(function () {
+// getWeather();
+// })
 
 function getWeather(searchQuery) {
   var url =
@@ -9,13 +9,17 @@ function getWeather(searchQuery) {
     "&units=metric&appid=" +
     apiKey;
 
+  $(".city").text("");
+  $(".temp").text("");
+  $(".error-message").text("");
+
   $.ajax(url, {
     success: function (data) {
       $(".city").text(data.name);
       $(".temp").text(data.main.temp);
     },
     error: function (error) {
-      $(".errormessage").text("An error occured");
+      $(".error-message").text("An error occured!");
     },
   });
 }
