@@ -85,6 +85,6 @@ function addMessage(postTitle, postBody) {
 function handleMessageFormSubmit() {
   var postTitle = $("#post-title").val();
   var postBody = $("#post-body").val();
-  console.log(postTitle);
-  //addMessage(postTitle, postBody);
+  //console.log(postTitle);
+  addMessage(postTitle, postBody);
 }
