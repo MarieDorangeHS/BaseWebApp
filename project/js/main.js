@@ -50,15 +50,17 @@ function handleSignIn() {
   firebase
     .auth()
     .signInWithPopup(provider)
-    .then(function (result) {
+    .then((result) => {
+      /** @type {firebase.auth.OAuthCredential} */
+      var credential = result.credential;
+
       // This gives you a Google Access Token. You can use it to access the Google API.
-      var token = result.credential.accessToken;
+      var token = credential.accessToken;
       // The signed-in user info.
       var user = result.user;
       console.log(user.email);
-      // check if it is working!
     })
-    .catch(function (error) {
+    .catch((error) => {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
