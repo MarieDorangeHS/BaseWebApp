@@ -72,3 +72,9 @@ function handleSignIn() {
       // ...
     });
 }
+
+function handleMessageFormSubmit() {
+  var postTitle = $("#post-title").val();
+  var postBody = $("#post-body").val();
+  console.log(postTitle);
+}
