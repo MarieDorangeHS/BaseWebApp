@@ -73,8 +73,16 @@ function handleSignIn() {
     });
 }
 
+function addMessage(postTitle, postBody) {
+  var postData = {
+    title: postTitle,
+    body: postBody,
+  };
+}
+
 function handleMessageFormSubmit() {
   var postTitle = $("#post-title").val();
   var postBody = $("#post-body").val();
   console.log(postTitle);
+  addMessage(postTitle, postBody);
 }
