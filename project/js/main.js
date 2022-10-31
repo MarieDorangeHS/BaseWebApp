@@ -75,11 +75,16 @@ function addMessage(postTitle, postBody) {
     title: postTitle,
     body: postBody,
   };
+
+  var dataBase = firebase.database().ref("posts");
+
+  var newPostRef = database.push();
+  newPostRef.set(postData);
 }
 
 function handleMessageFormSubmit() {
   var postTitle = $("#post-title").val();
   var postBody = $("#post-body").val();
   console.log(postTitle);
-  //addMessage(postTitle, postBody);
+  addMessage(postTitle, postBody);
 }
