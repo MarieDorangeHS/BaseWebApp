@@ -46,7 +46,7 @@ function searchWeather() {
 
 function handleSignIn() {
   var provider = new firebase.auth.GoogleAuthProvider();
-
+  console.log("provider", provider);
   firebase
     .auth()
     .signInWithPopup(provider)
