@@ -92,3 +92,5 @@ function handleMessageFormSubmit() {
   console.log(postTitle);
   addMessage(postTitle, postBody);
 }
+
+console.log("main.js", handleSignIn);
