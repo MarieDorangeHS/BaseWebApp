@@ -2,6 +2,8 @@
 // getWeather();
 // })
 
+import firebase from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+
 function getWeather(searchQuery) {
   var url =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
