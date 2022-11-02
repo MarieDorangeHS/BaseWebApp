@@ -34,18 +34,17 @@
   var apiKey = "<%=process.env.API_KEY %>";
 </script>
 
-<!-- core FIREBASE JS required-->
-<script type="module">
-  // Import the functions you need from the SDKs you need
-  import { initializeApp } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
+<!--The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-app.js"></script>
 
-  // TODO: Add SDKs for Firebase products that you want to use
-  // https://firebase.google.com/docs/web/setup#available-libraries
-  import { getAuth } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-auth.js";
-  import { getDatabase } from "https://www.gstatic.com/firebasejs/9.13.0/firebase-database.js";
+<!--TODO: Add SDKs for Firebase products that you want to use 
+https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/6.1.0/firebase-database.js"></script>
 
-  // Your web app's Firebase configuration
-  const firebaseConfig = {
+<!-- Your web app's Firebase configuration-->
+<script>
+  var firebaseConfig = {
     apiKey: "<%= process.env.FIREBASE_API_KEY %>",
     authDomain: "message-stream-a2a40.firebaseapp.com",
     databaseURL:
@@ -55,9 +54,8 @@
     messagingSenderId: "245426279764",
     appId: "1:245426279764:web:55ff4545207ed8e83ca4c1",
   };
-
-  // Initialize Firebase
-  const app = initializeApp(firebaseConfig);
+  //Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
 </script>
 
 <!-- then our app's own js file -->

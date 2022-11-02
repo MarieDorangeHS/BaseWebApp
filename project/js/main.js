@@ -59,7 +59,7 @@ function handleSignIn() {
       // The signed-in user info.
       var user = result.user;
       console.log(user.email);
-      // ...
+      // check if it is working!
     })
     .catch((error) => {
       // Handle Errors here.
