@@ -2,8 +2,6 @@
 // getWeather();
 // })
 
-import firebase from "https://www.gstatic.com/firebasejs/9.13.0/firebase-app.js";
-
 function getWeather(searchQuery) {
   var url =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -52,17 +50,15 @@ function handleSignIn() {
   firebase
     .auth()
     .signInWithPopup(provider)
-    .then((result) => {
-      /** @type {firebase.auth.OAuthCredential} */
-      var credential = result.credential;
-
+    .then(function (result) {
       // This gives you a Google Access Token. You can use it to access the Google API.
-      var token = credential.accessToken;
+      var token = result.credential.accessToken;
       // The signed-in user info.
       var user = result.user;
       console.log(user.email);
+      // check if it is working!
     })
-    .catch((error) => {
+    .catch(function (error) {
       // Handle Errors here.
       var errorCode = error.code;
       var errorMessage = error.message;
@@ -89,6 +85,6 @@ function addMessage(postTitle, postBody) {
 function handleMessageFormSubmit() {
   var postTitle = $("#post-title").val();
   var postBody = $("#post-body").val();
-  console.log(postTitle);
+  // console.log(postTitle);
   addMessage(postTitle, postBody);
 }
