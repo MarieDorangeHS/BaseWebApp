@@ -2,6 +2,10 @@
 // getWeather();
 // })
 
+$(document).ready(function () {
+  getPost();
+});
+
 function getWeather(searchQuery) {
   var url =
     "https://api.openweathermap.org/data/2.5/weather?q=" +
@@ -91,6 +95,18 @@ function handleMessageFormSubmit() {
   var postBody = $("#post-body").val();
   console.log(postTitle);
   addMessage(postTitle, postBody);
+}
+
+function getPosts() {
+  return firebase
+    .database()
+    .ref("posts")
+    .once("value")
+    .then((snapshot) => {
+      var posts = snapshot.val();
+      console.log(posts);
+      // ...
+    });
 }
 
 console.log("main.js", handleSignIn);

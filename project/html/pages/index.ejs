@@ -13,7 +13,7 @@
     <button onClick="() => handleSignIn()">Login</button>
 
     <!-- send message form-->
-    <form onSubmit="handleMessageFormSubmit()" action="#">
+    <form onSubmit="() => handleMessageFormSubmit()" action="#">
       Title:<br />
       <input id="post-title" /><br />
       Body:<br />
@@ -21,10 +21,13 @@
       <button>Submit</button>
     </form>
 
+    <!--Post listing here-->
+    <div id="post-listing"></div>
+
     <!--Bellow is the display of infos from the weather API-->
     <div class="weather">
       <input class="search" type="text" placeholder="Enter city name" />
-      <button type="button" onClick="searchWeather()">Search</button>
+      <button type="button" onClick="() => searchWeather()">Search</button>
       <div class="error-message"></div>
       <div class="city-name">
         <p>City is :</p>
@@ -43,7 +46,7 @@
     </div>
     <p class="reward">BRAVO! Ask for a reward now</p>
 
-    <button onClick="showPicture()" class="btn btn-dark">
+    <button onClick="() => showPicture()" class="btn btn-dark">
       Yes, this button!
     </button>
 
