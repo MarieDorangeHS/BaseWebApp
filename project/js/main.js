@@ -2,9 +2,9 @@
 // getWeather();
 // })
 
-$(document).ready(function () {
-  getPost();
-});
+// $(document).ready(function () {
+// getPost();
+// });
 
 function getWeather(searchQuery) {
   var url =
