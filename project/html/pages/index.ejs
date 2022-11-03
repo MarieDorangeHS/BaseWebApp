@@ -8,7 +8,7 @@
     <!-- Check out more components here: http://getbootstrap.com/components/ -->
     <div class="page-header">
       <%- include('../helpers/navbar.ejs') %>
-      <h1>API Weather Web App</h1>
+      <h1>Message Streal Web App</h1>
     </div>
     <button onClick="() => handleSignIn()">Login</button>
 
@@ -24,33 +24,5 @@
     <!--Post listing here-->
     <h3>Posts Listing</h3>
     <div id="post-listing"></div>
-
-    <!--Bellow is the display of infos from the weather API-->
-    <div class="weather">
-      <input class="search" type="text" placeholder="Enter city name" />
-      <button type="button" onClick="() => searchWeather()">Search</button>
-      <div class="error-message"></div>
-      <div class="city-name">
-        <p>City is :</p>
-        <p class="city"></p>
-      </div>
-      <div class="city-temp">
-        <p>Temperature is :</p>
-        <p class="temp"></p>
-        <p>°C</p>
-      </div>
-      <div class="city-wind">
-        <p>Wind is :</p>
-        <p class="wind"></p>
-        <p>km/h</p>
-      </div>
-    </div>
-    <p class="reward">BRAVO! Ask for a reward now</p>
-
-    <button onClick="() => showPicture()" class="btn btn-dark">
-      Yes, this button!
-    </button>
-
-    <div id="image"></div>
   </body>
 </html>
