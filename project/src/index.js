@@ -31,7 +31,7 @@ const database = getDatabase(app);
 
 //detect auth change
 onAuthStateChanged(auth, (user) => {
-  if (user ≠ null) {
+  if (user != null) {
     console.log("logged in!");
   } else {
     console.log("No user");
