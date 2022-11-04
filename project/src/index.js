@@ -10,7 +10,18 @@ import {
   onAuthStateChanged,
 } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
 
-import { getDatabase } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js";
+import {
+  getDatabase,
+  ref,
+  push,
+  set,
+  onChildAdded,
+  onChildChanged,
+  onChildRemoved,
+  onValue,
+  query,
+  orderByChild,
+} from "https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js";
 
 // Your web app's Firebase configuration
 const firebaseConfig = {
@@ -32,7 +43,51 @@ const auth = getAuth();
 const provider = new GoogleAuthProvider();
 
 // Initialize Realtime Database and get a reference to the service
-const database = getDatabase(app);
+const database = getDatabase();
+
+// Create a new post reference with an auto-generated id
+const db = getDatabase();
+const postListRef = ref(db, "posts");
+const newPostRef = push(postListRef);
+set(newPostRef, {
+  // ...
+});
+
+const commentsRef = ref(db, "post-comments/" + postId);
+onChildAdded(commentsRef, (data) => {
+  addCommentElement(postElement, data.key, data.val().text, data.val().author);
+});
+
+onChildChanged(commentsRef, (data) => {
+  setCommentValues(postElement, data.key, data.val().text, data.val().author);
+});
+
+onChildRemoved(commentsRef, (data) => {
+  deleteComment(postElement, data.key);
+});
+
+const dbRef = ref(db, "/a/b/c");
+
+onValue(
+  dbRef,
+  (snapshot) => {
+    snapshot.forEach((childSnapshot) => {
+      const childKey = childSnapshot.key;
+      const childData = childSnapshot.val();
+      // ...
+    });
+  },
+  {
+    onlyOnce: true,
+  }
+);
+
+const myUserId = auth.currentUser.uid;
+c
+onst topUserPostsRef = query(
+  ref(db, "user-posts/" + myUserId),
+  orderByChild("starCount")
+);
 
 //detect auth change
 onAuthStateChanged(auth, (user) => {

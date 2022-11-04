@@ -2,6 +2,7 @@
 // getPost();
 // });
 
+///SUPPRIMER CI_DESSOUS
 function handleSignIn() {
   var provider = new firebase.auth.GoogleAuthProvider();
   console.log("provider", provider);
@@ -67,6 +68,6 @@ console.log(
   "main.js",
   "index.js",
   addMessage,
-  handleSignIn,
-  handleMessageFormSubmit
+  handleMessageFormSubmit,
+  getPosts
 );
