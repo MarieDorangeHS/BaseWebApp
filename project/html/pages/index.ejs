@@ -10,7 +10,7 @@
       <%- include('../helpers/navbar.ejs') %>
       <h1>Message Stream Web App</h1>
     </div>
-    <button onClick="signInWithPopup()">Login</button>
+    <button onClick="signInWithPopup(auth, provider)">Login</button>
 
     <!-- send message form-->
     <form onSubmit="handleMessageFormSubmit()" action="#">
