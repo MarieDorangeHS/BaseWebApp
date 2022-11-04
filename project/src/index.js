@@ -3,7 +3,10 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-import { getAuth } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
+import {
+  getAuth,
+  onAuthStateChanged,
+} from "https://www.gstatic.com/firebasejs/9.0.0/firebase-auth.js";
 import { getDatabase } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js";
 
 // Your web app's Firebase configuration
@@ -28,7 +31,7 @@ const database = getDatabase(app);
 
 //detect auth change
 onAuthStateChanged(auth, (user) => {
-  if (user != null) {
+  if (user ≠ null) {
     console.log("logged in!");
   } else {
     console.log("No user");
