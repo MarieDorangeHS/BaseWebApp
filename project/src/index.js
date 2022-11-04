@@ -1,5 +1,7 @@
 // Import the functions you need from the SDKs you need
+
 import { initializeApp } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-app.js";
+
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
@@ -19,8 +21,6 @@ import {
   onChildChanged,
   onChildRemoved,
   onValue,
-  query,
-  orderByChild,
 } from "https://www.gstatic.com/firebasejs/9.0.0/firebase-database.js";
 
 // Your web app's Firebase configuration
@@ -35,6 +35,8 @@ const firebaseConfig = {
   appId: "1:245426279764:web:55ff4545207ed8e83ca4c1",
 };
 
+const app = initializeApp(firebaseConfig);
+
 // Initialize Firebase
 
 const auth = getAuth();
@@ -44,7 +46,7 @@ const provider = new GoogleAuthProvider();
 // Initialize Realtime Database and get a reference to the service
 
 // Create a new post reference with an auto-generated id
-const db = getDatabase();
+const db = getDatabase(app);
 const postListRef = ref(db, "posts");
 const newPostRef = push(postListRef);
 set(newPostRef, {
