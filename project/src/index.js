@@ -27,7 +27,7 @@ const auth = getAuth(app);
 const database = getDatabase(app);
 
 //detect auth change
-anAuthStateChanged(auth, (user) => {
+onAuthStateChanged(auth, (user) => {
   if (user != null) {
     console.log("logged in!");
   } else {
