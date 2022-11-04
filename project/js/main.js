@@ -63,4 +63,10 @@ function getPosts() {
     });
 }
 
-console.log("main.js", handleSignIn);
+console.log(
+  "main.js",
+  "index.js",
+  addMessage,
+  handleSignIn,
+  handleMessageFormSubmit
+);
